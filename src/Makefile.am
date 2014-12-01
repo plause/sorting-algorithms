@@ -8,3 +8,6 @@ bubble_sort_SOURCES = $(sortsrc) bubble.c
 
 bin_PROGRAMS += merge-sort
 merge_sort_SOURCES = $(sortsrc) merge.c
+
+bin_PROGRAMS += quick-sort
+quick_sort_SOURCES = $(sortsrc) quick.c
