@@ -11,3 +11,6 @@ merge_sort_SOURCES = $(sortsrc) merge.c
 
 bin_PROGRAMS += quick-sort
 quick_sort_SOURCES = $(sortsrc) quick.c
+
+bin_PROGRAMS += insertion-sort
+insertion_sort_SOURCES = $(sortsrc) insertion.c
