@@ -14,3 +14,6 @@ quick_sort_SOURCES = $(sortsrc) quick.c
 
 bin_PROGRAMS += insertion-sort
 insertion_sort_SOURCES = $(sortsrc) insertion.c
+
+bin_PROGRAMS += shell-sort
+shell_sort_SOURCES = $(sortsrc) shell.c
