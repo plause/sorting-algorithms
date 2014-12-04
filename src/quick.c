@@ -23,9 +23,6 @@ void sort(int size, int *array)
       gg[g++] = v;
   }
 
-  sort(l, ll);
-  sort(g, gg);
-
   for (i = 0; i < l; i++)
     array[i] = ll[i];
 
@@ -38,4 +35,7 @@ void sort(int size, int *array)
   free(ll);
   free(ee);
   free(gg);
+
+  sort(l, array);
+  sort(g, array + l + e);
 }
