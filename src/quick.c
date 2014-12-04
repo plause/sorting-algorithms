@@ -15,10 +15,10 @@ void sort(int size, int *array)
   for (i = 0; i < size; i++) {
     v = array[i];
 
-    if (v == pivot)
-      ee[e++] = v;
-    else if (v < pivot)
+    if (v < pivot)
       ll[l++] = v;
+    else if (v == pivot)
+      ee[e++] = v;
     else
       gg[g++] = v;
   }
