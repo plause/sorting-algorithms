@@ -19,16 +19,17 @@ static int *init(int size)
   return array;
 }
 
-static void print(char *label, int size, int *array)
+void dump(int size, int *array)
 {
-  int i = 0;
+  if (size < 1)
+    return;
 
-  fprintf(stdout, "%s", label);
+  int i;
 
-  for (i = 0; i < size; i++)
-    fprintf(stdout, " %02d", array[i]);
+  for (i = 0; i < size - 1; i++)
+    fprintf(stdout, "%02d ", array[i]);
 
-  fprintf(stdout, "\n");
+  fprintf(stdout, "%d\n", array[i]);
 }
 
 int main(int argc, char **argv)
@@ -36,9 +37,9 @@ int main(int argc, char **argv)
   int size = 5;
   int *array = init(size);
 
-  print("before sort:\n", size, array);
+  dump(size, array);
   sort(size, array);
-  print("after sort:\n", size, array);
+  dump(size, array);
 
   return 0;
 }
