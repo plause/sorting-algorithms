@@ -9,27 +9,27 @@ static int min(int a, int b)
 static void merge(int lsize, int *larray, int rsize, int *rarray)
 {
   int *merged = calloc(lsize + rsize, sizeof(int));
-  int i = 0, j = 0, k = 0, n;
+  int i = 0, j = 0, k = 0;
 
   // fill the array with sorted elements
   while (i < lsize && j < rsize)
     merged[k++] = larray[i] < rarray[j] ? larray[i++] : rarray[j++];
 
   // fill if the left has unchecked elements
-  for (n = i; n < lsize; n++)
-    merged[k++] = larray[n];
+  while (i < lsize)
+    merged[k++] = larray[i++];
 
   // fill if the right has unchecked elements
-  for (n = j; n < rsize; n++)
-    merged[k++] = rarray[n];
+  while (j < rsize)
+    merged[k++] = rarray[j++];
 
   // update the left side of the orignal array
-  for (n = 0; n < lsize; n++)
-    larray[n] = merged[n];
+  for (i = 0; i < lsize; i++)
+    larray[i] = merged[i];
 
   // update the right side of the orignal array
-  for (n = 0; n < rsize; n++)
-    rarray[n] = merged[n + lsize];
+  for (j = 0; j < rsize; j++)
+    rarray[j] = merged[j + lsize];
 
   free(merged);
 }
