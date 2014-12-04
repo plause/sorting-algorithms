@@ -36,7 +36,7 @@ static void merge(int lsize, int *larray, int rsize, int *rarray)
 
 void sort(int size, int *array)
 {
-  if (size == 1)
+  if (size < 2)
     return;
 
   int lsize = size / 2;

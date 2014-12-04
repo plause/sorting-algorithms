@@ -3,7 +3,7 @@
 
 void sort(int size, int *array)
 {
-  if (size == 1)
+  if (size < 2)
     return;
 
   int pivot = array[size / 2]; // pick the midian value as pivot
