@@ -41,5 +41,7 @@ int main(int argc, char **argv)
   sort(size, array);
   dump(size, array);
 
+  free(array);
+
   return 0;
 }
